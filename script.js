@@ -1,28 +1,36 @@
+const slider = document.getElementById("numLength");
+const lenVal = document.getElementById("lenVal");
+
+slider.oninput = () => {
+  lenVal.textContent = slider.value;
+};
+
 function generateKey() {
   const version = document.getElementById("version").value;
-  const siteTag = document.getElementById("siteTag").value.toUpperCase();
+  const site = document.getElementById("siteTag").value.toUpperCase();
   const core = document.getElementById("corePassword").value;
+  const len = slider.value;
 
   if (!core) {
-    alert("Enter your actual password");
+    alert("Enter your password");
     return;
   }
 
-  const randomNumbers = Math.floor(100 + Math.random() * 900);
+  let nums = "";
+  for (let i = 0; i < len; i++) {
+    nums += Math.floor(Math.random() * 10);
+  }
 
-  const finalKey = `${version}${siteTag}${core}${randomNumbers}`;
-
-  document.getElementById("output").value = finalKey;
+  document.getElementById("output").value =
+    `${version}${site}${core}${nums}`;
 }
 
 function copyKey() {
-  const output = document.getElementById("output");
+  const out = document.getElementById("output");
+  if (!out.value) return;
 
-  if (!output.value) return;
-
-  output.select();
-  navigator.clipboard.writeText(output.value);
-  alert("Copied to clipboard");
+  navigator.clipboard.writeText(out.value);
+  alert("Copied!");
 }
 
 function togglePassword() {
