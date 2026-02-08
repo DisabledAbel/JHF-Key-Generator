@@ -7,22 +7,28 @@
 </head>
 <body>
   <div class="container">
-    <h1>🔐 JHFvcKey Generator</h1>
+    <h1>🔐 JHFvcKey</h1>
 
-    <input
-      type="password"
-      id="corePassword"
-      placeholder="Enter your actual password"
-    />
+    <label>Version</label>
+    <select id="version">
+      <option value="JHFv1">JHFv1</option>
+      <option value="JHFv2">JHFv2</option>
+    </select>
+
+    <label>Site Tag</label>
+    <input type="text" id="siteTag" placeholder="GH, GG, DC…" maxlength="4" />
+
+    <label>Actual Password</label>
+    <div class="password-box">
+      <input type="password" id="corePassword" placeholder="Your password" />
+      <button class="eye" onclick="togglePassword()">👁</button>
+    </div>
 
     <button onclick="generateKey()">Generate</button>
 
-    <input
-      type="text"
-      id="output"
-      placeholder="Your JHFvcKey will appear here"
-      readonly
-    />
+    <input type="text" id="output" placeholder="Your JHFvcKey" readonly />
+
+    <button class="copy" onclick="copyKey()">📋 Copy</button>
   </div>
 
   <script src="script.js"></script>
