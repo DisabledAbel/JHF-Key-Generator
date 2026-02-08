@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JHFvcKey Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -16,17 +17,20 @@
     </select>
 
     <label>Site Tag</label>
-    <input type="text" id="siteTag" placeholder="GH, GG, DC…" maxlength="4" />
+    <input id="siteTag" placeholder="GH, GG, DC" maxlength="4" />
 
-    <label>Actual Password</label>
+    <label>Password</label>
     <div class="password-box">
       <input type="password" id="corePassword" placeholder="Your password" />
       <button class="eye" onclick="togglePassword()">👁</button>
     </div>
 
+    <label>Random numbers length: <span id="lenVal">3</span></label>
+    <input type="range" min="2" max="6" value="3" id="numLength" />
+
     <button onclick="generateKey()">Generate</button>
 
-    <input type="text" id="output" placeholder="Your JHFvcKey" readonly />
+    <input id="output" readonly placeholder="Your JHFvcKey" />
 
     <button class="copy" onclick="copyKey()">📋 Copy</button>
   </div>
