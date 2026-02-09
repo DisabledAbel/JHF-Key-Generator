@@ -1,0 +1,13 @@
+name: Vercel Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy
+        run: echo "Deployment handled automatically by Vercel GitHub integration"
