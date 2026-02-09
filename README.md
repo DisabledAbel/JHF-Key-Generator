@@ -60,4 +60,4 @@ Think of it like a calculator — it helps you create something, but it doesn’
 
 ## License
 
-MIT License
+Eclipse Public License 2.0
