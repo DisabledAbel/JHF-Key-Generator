@@ -1,0 +1,16 @@
+{
+  "name": "JHFvcKey",
+  "short_name": "JHFvcKey",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1b1f3a",
+  "theme_color": "#1b1f3a",
+  "description": "Offline password generator using the JHFvcKey format",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
